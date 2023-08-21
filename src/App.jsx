@@ -1,10 +1,12 @@
 import './App.css';
-import RankingList from './pages/RankingList';
+import HeaderList from './pages/HeaderList';
+import Ranking from './pages/Ranking';
 
 function App() {
   return (
     <div className="headerMenu_container">
-      <RankingList />
+      <HeaderList />
+      <Ranking />
     </div>
   );
 }

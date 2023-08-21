@@ -1,25 +1,50 @@
+import { useEffect, useState } from 'react';
 import RankingHeader from '../components/RankingHeader';
-import HeaderList from './HeaderList';
+import { getPbImageURL } from '../getPbImageURL';
 import RankingList from './RankingList';
 
 function Ranking() {
+  const [data, setData] = useState([]);
+
+  async function fetchList() {
+    const response = await fetch(
+      'http://127.0.0.1:8090/api/collections/escape/records'
+    );
+    const data = await response.json();
+    setData(data.items);
+
+    return data.items;
+  }
+
+  useEffect(() => {
+    fetchList();
+  }, []);
+
+  const handleTopSort = () => {
+    setData(data.toSorted((a, b) => a.grade - b.grade));
+  };
+
+  const handleBottomSort = () => {
+    setData(data.toSorted((a, b) => b.grade - a.grade));
+  };
+
   return (
     <>
-      <HeaderList />
-      <div className="escape_rankingPage">
-        <RankingHeader />
-        <RankingList />
-        <div className="escape_rankingListContainer">
-          <div className="escape_rankingList">
-            <p className="themeImg">테마이미지</p>
-            <div className="themeCafe">
-              <h3 className="store">카페이름</h3>
-              <span className="point">지점</span>
-              <span className="grade">평점</span>
-            </div>
-            <h4 className="theme">테마이름</h4>
-          </div>
-        </div>
+      <div>
+        <RankingHeader onClick1={handleBottomSort} onClick2={handleTopSort} />
+        <ul className="escape_ul">
+          {data.map((item) => (
+            <li key={item.id}>
+              <RankingList
+                store={item.store}
+                point={item.point}
+                grade={item.grade}
+                theme={item.theme}
+                themeImg={getPbImageURL(item, 'image')}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 .headerMenu_container {
   display: flex;
-  width: 100%;
 }
 
 .escape_headerList {
@@ -47,9 +46,9 @@
   align-items: center;
   padding: 60px 20px 20px 0;
   height: 30px;
-  flex-grow: 1;
+  width: 100%;
   border-bottom: 1px solid gray;
-  margin-left: 80px;
+  margin-left: 100px;
 }
 
 .escape_rankingHeader h2 {
@@ -71,7 +70,6 @@ button:hover {
 }
 
 .escape_rankingList {
-  background-color: darkcyan;
   margin-left: 80px;
   padding: 0 10px;
   width: 800px;
@@ -82,14 +80,30 @@ button:hover {
 .themeImg {
   float: left;
   width: 150px;
-  background-color: red;
-  height: 170px;
+  height: 190px;
 }
 
 .themeCafe {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: beige;
   height: 50%;
+  border-bottom: 1px solid #ccc;
+}
+
+.store {
+  width: 33%;
+}
+
+.point {
+  width: 33%;
+}
+
+.theme {
+  text-align: center;
+}
+
+.escape_ul {
+  margin-left: 80px;
+  width: 100%;
 }
