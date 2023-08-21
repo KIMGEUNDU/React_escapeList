@@ -1,10 +1,11 @@
 import './App.css';
+import RankingList from './pages/RankingList';
 
 function App() {
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className="headerMenu_container">
+      <RankingList />
+    </div>
   );
 }
 

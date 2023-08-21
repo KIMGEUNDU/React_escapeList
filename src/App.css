@@ -1,42 +1,95 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.headerMenu_container {
+  display: flex;
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.escape_headerList {
+  height: 100vh;
+  padding: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.escape_header {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.escape_header img {
+  width: 80px;
 }
 
-.card {
-  padding: 2em;
+.escape_rankingPage {
+  flex-grow: 1;
 }
 
-.read-the-docs {
-  color: #888;
+.escape_menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+.escape_menu li {
+  margin: 20px 0;
+}
+
+.escape_menu li:hover {
+  font-weight: 700;
+}
+
+.escape_rankingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 20px 20px 0;
+  height: 30px;
+  flex-grow: 1;
+  border-bottom: 1px solid gray;
+  margin-left: 80px;
+}
+
+.escape_rankingHeader h2 {
+  font-size: 30px;
+}
+
+button {
+  width: 80px;
+  height: fit-content;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  margin: 5px 0;
+  background-color: transparent;
+}
+
+button:hover {
+  font-weight: 900;
+}
+
+.escape_rankingList {
+  background-color: darkcyan;
+  margin-left: 80px;
+  padding: 0 10px;
+  width: 800px;
+  margin: 30px auto;
+  height: 200px;
+}
+
+.themeImg {
+  float: left;
+  width: 150px;
+  background-color: red;
+  height: 170px;
+}
+
+.themeCafe {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: beige;
+  height: 50%;
 }
