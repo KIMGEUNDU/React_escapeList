@@ -8,7 +8,7 @@ function Ranking() {
 
   async function fetchList() {
     const response = await fetch(
-      'http://127.0.0.1:8090/api/collections/escape/records'
+      'https://escape.pockethost.io/api/collections/escape/records'
     );
     const data = await response.json();
     setData(data.items);
